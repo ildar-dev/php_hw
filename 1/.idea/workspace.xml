@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ce4bc0fb-272e-4f4f-86fc-cfbe873f0e89" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Y5bUsYhCGgVsuFZq1735h9sBjV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ce4bc0fb-272e-4f4f-86fc-cfbe873f0e89" name="Default Changelist" comment="" />
+      <created>1582235420254</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582235420254</updated>
+      <workItem from="1582235421602" duration="441000" />
+      <workItem from="1582733806341" duration="6811000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="385" y="46" key="#PHP" timestamp="1582235505176">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="385" y="46" key="#PHP/0.23.1440.877@0.23.1440.877" timestamp="1582235505176" />
+    <state x="538" y="392" key="NewPhpFileDialog" timestamp="1582235433845">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="538" y="392" key="NewPhpFileDialog/0.23.1440.877@0.23.1440.877" timestamp="1582235433845" />
+    <state x="221" y="100" key="SettingsEditor" timestamp="1582803253870">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="221" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1582803253870" />
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1582806385171">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1582806385171" />
+  </component>
+</project>
