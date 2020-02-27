@@ -1,9 +1,11 @@
 <?php
 include("form.html");
-$instruction = (string)$_REQUEST['input'];
+$instruction = (string)$_REQUEST['instruction'];
+$data = (string)$_REQUEST['data'];
 $memory = [];//большой массив
 $output = '';//вывод
 $stack = [];
+$pointerD=0;
 $openToClose = [];
 $closeToOpen = [];
 for ($pointerI = 0; $pointerI < strlen($instruction); $pointerI++) {//для квадратных скобок
@@ -36,8 +38,11 @@ for ($pointerI = 0; $pointerI < strlen($instruction); $pointerI++) {
             $memory[$pointerM]--;
             break;
         case '.':
-            $c = chr($memory[$pointerM]);
-            $output .= $c;
+            $output .= chr($memory[$pointerM]);
+            break;
+        case ',':
+            if( $data)
+            $memory[$pointerM]=ord($data[$pointerD++]);
             break;
         case '[':
             if ($memory[$pointerM] == 0) {
