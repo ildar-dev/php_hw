@@ -52,7 +52,7 @@ function checkGenerator($resultArray)
         $obj["calculated_probability"] = $count / 10000;
         array_push($checkedArray, $obj);
     }
-    echo json_encode($checkedArray);
+    echo json_encode($checkedArray,JSON_UNESCAPED_UNICODE);
 }
 
 checkGenerator($resultArray);
