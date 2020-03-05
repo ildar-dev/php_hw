@@ -35,7 +35,7 @@ function GetString($str)
     return $output . "</br> count : " . $generator->getReturn();
 }
 
-if ($_REQUEST["input"] != null)
+if (isset($_REQUEST["input"]))
     echo GetString($_REQUEST["input"]);
 else
     echo "Введите данные";

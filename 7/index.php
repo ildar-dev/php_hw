@@ -3,7 +3,7 @@ include("form.html");
 $address = $_REQUEST["address"];
 $chPing = $_REQUEST["ping"];
 $chTrace = $_REQUEST["trace"];
-if($address==null||$chPing==null||$chTrace==null)
+if(!isset($address))
 {
     "Введите данные";
     return;

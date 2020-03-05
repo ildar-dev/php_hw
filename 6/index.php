@@ -1,12 +1,8 @@
 <?php
 $ini = parse_ini_file("index.ini", true);
 $input = file($ini["main"]["filename"]);
-if($ini==null) {
+if(!isset($ini)) {
     echo"не найден index.ini";
-    return;
-}
-if($input==null) {
-    echo"не найден ".$ini["main"]["filename"];
     return;
 }
 if (!$ini["second_rule"]["direction"] == "+" || !$ini["second_rule"]["direction"] == "-") {

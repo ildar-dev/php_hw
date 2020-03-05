@@ -1,7 +1,7 @@
 <?php
 include("form.html");
 $textArea = $_REQUEST["area"];
-if ($textArea == null) {
+if (!isset($textArea)) {
     echo "Введите данные";
     return;
 }

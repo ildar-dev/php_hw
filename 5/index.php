@@ -1,7 +1,7 @@
 <?php
 include("form.html");
 $password = $_REQUEST["password"];
-if($password==null)
+if(!isset($password))
 {
     echo "Введите пароль";
     return;
