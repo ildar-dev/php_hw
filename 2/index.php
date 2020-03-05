@@ -37,3 +37,5 @@ function GetString($str)
 
 if ($_REQUEST["input"] != null)
     echo GetString($_REQUEST["input"]);
+else
+    echo "Введите данные";

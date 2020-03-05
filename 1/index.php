@@ -2,10 +2,14 @@
 include("form.html");
 $instruction = (string)$_REQUEST['instruction'];
 $data = (string)$_REQUEST['data'];
+if ($instruction == null) {
+    echo "Введите инструкцию";
+    return;
+}
 $memory = [];//большой массив
 $output = '';//вывод
 $stack = [];
-$pointerD=0;
+$pointerD = 0;
 $openToClose = [];
 $closeToOpen = [];
 for ($pointerI = 0; $pointerI < strlen($instruction); $pointerI++) {//для квадратных скобок
@@ -41,8 +45,12 @@ for ($pointerI = 0; $pointerI < strlen($instruction); $pointerI++) {
             $output .= chr($memory[$pointerM]);
             break;
         case ',':
-            if( $data)
-            $memory[$pointerM]=ord($data[$pointerD++]);
+            if ($data)
+                $memory[$pointerM] = ord($data[$pointerD++]);
+            else{
+                echo "Введите данные";
+                return;
+            }
             break;
         case '[':
             if ($memory[$pointerM] == 0) {
@@ -57,3 +65,4 @@ for ($pointerI = 0; $pointerI < strlen($instruction); $pointerI++) {
     }
 }
 echo "<p>" . $output . "</p>";
+

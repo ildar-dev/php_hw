@@ -16,7 +16,6 @@ $calendar[-1] = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"];
 $calendar[0] = array_fill(0, 7, "");
 foreach ($period as $datetime) {
     $dayWeekMonth = explode(" ", $datetime->format("d w m"));
-
     $dayWeekMonth[1] = ($dayWeekMonth[1] + 6) % 7;//иначе 0-воскресенье
     if ($dayWeekMonth[2] != $date->format("m"))
         break;

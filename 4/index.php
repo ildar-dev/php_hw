@@ -1,6 +1,10 @@
 <?php
 include("form.html");
 $textArea = $_REQUEST["area"];
+if ($textArea == null) {
+    echo "Введите данные";
+    return;
+}
 $arrayOfLines = explode("\n", $textArea);
 $data = [];
 $sum = 0;
@@ -13,9 +17,8 @@ foreach ($arrayOfLines as $line) {
     $obj["weight"] = $weight;
     array_push($data, $obj);
 }
-foreach ($data as &$obj) {
+foreach ($data as &$obj)
     $obj["probability"] = $obj["weight"] / $sum;
-}
 $resultArray = [];
 $resultArray["sum"] = $sum;
 $resultArray["data"] = $data;
@@ -52,7 +55,7 @@ function checkGenerator($resultArray)
         $obj["calculated_probability"] = $count / 10000;
         array_push($checkedArray, $obj);
     }
-    echo json_encode($checkedArray,JSON_UNESCAPED_UNICODE);
+    echo json_encode($checkedArray, JSON_UNESCAPED_UNICODE);
 }
 
 checkGenerator($resultArray);
