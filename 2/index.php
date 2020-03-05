@@ -29,10 +29,11 @@ function GetString($str)
     }
 
     $generator = generator($str);
-    foreach ($generator as $item) {
-        echo $item;
-    }
-    echo "</br> count : " . $generator->getReturn();
+    $output = "";
+    foreach ($generator as $item)
+        $output .= $item;
+    return $output . "</br> count : " . $generator->getReturn();
 }
 
-GetString($_REQUEST["input"]);
+if ($_REQUEST["input"] != null)
+    echo GetString($_REQUEST["input"]);
