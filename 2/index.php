@@ -29,7 +29,7 @@ function GetString($str)
     }
 
     $generator = generator($str);
-    $output = "";
+    $output = '';
     foreach ($generator as $item)
         $output .= $item;
     return $output . "</br> count : " . $generator->getReturn();
