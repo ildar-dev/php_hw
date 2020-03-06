@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="index.php">
+    <p><textarea name="text"></textarea></p>
+    Вывод логов:
+    <p><input name="log" type="radio" value="file">В файл  :  <input name="path" type="text" value="output.txt"></p>
+    <p><input name="log" type="radio" value="browser">В браузер</p>
+    Параметры логов:
+    <p><input name="format" type="radio" value="1">С датой и временем</p>
+    <p><input name="format" type="radio" value="2">Со временем</p>
+    <p><input name="format" type="radio" value="3">Без даты и времени</p>
+    <input type="submit">
+</form>
+</body>
+</html>

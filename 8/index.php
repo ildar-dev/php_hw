@@ -3,7 +3,7 @@ include("form.html");
 $month = $_REQUEST["m"];
 $now = new DateTime();
 $now->setTimezone(new DateTimeZone("Europe/Moscow"));
-if ($month == null) {
+if (!isset($month)) {
     $month = $now->format("m");
     $date = new DateTime("{$now->format("y-m")}-01 00:00:00", new DateTimeZone("Europe/Moscow"));
 } else

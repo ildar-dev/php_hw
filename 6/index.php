@@ -9,7 +9,7 @@ if (!$ini["second_rule"]["direction"] == "+" || !$ini["second_rule"]["direction"
     echo "index.ini[second_rule][direction] must be \"+\" or \"-\"";
     return;
 }
-if (strlen($ini["third_rule"]["delete"]) != 1) {
+if (mb_strlen($ini["third_rule"]["delete"]) != 1) {
     echo "index.ini[third_rule][delete] must be char";
     return;
 }
