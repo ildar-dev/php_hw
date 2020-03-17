@@ -15,12 +15,5 @@ class randomException
     {
         for($i=1;$i<5;$i++)
             eval('$this->rnd'.$i.' = function(){ $number =random_int(0,1);if($number==0)return new Exceptions\Exception'.$i.'();return new \Exceptions\Exception'.($i+1).'();};');
-
-//        $this->rnd1 = function(){
-//            $number =random_int(0,1);
-//            if($number==0)
-//                return new Exceptions\Exception1();
-//                return new \Exceptions\Exception2();
-//        };
     }
 }

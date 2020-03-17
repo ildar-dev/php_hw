@@ -18,8 +18,5 @@ foreach ($rnd as $item) {
         echo "Ошибка №2</br>";
     } catch (\Exceptions\Exception1 $e) {
         echo "Ошибка №1</br>";
-
-
-
     }
 }
