@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="index.php" method="get" autocomplete="on" class="form">
+    Тип:<br>
+    <input type="radio" name="type" value="bktp">БКТП
+    <input type="radio" name="material" value="b">бетон
+    <input type="radio" name="material" value="s">сэндвич<br>
+    <input type="radio" name="type" value="ktp">КТП<br>
+    Ввод:</br>
+    <input type="radio" name="input" value="cable">кабель
+    <input type="radio" name="input" value="air">воздух<br>
+    Вывод:</br>
+    <input type="radio" name="output" value="cable">кабель
+    <input type="radio" name="output" value="air">воздух<br>
+    <select name="power">
+        <option disabled>Выберите мощность</option>
+        <option value="25">25</option>
+        <option value="63">63</option>
+        <option value="160">160</option>
+        <option value="250">250</option>
+        <option value="400">400</option>
+        <option value="630">630</option>
+        <option value="1000">1000</option>
+        <option value="1600">1600</option>
+        <option value="2500">2500</option>
+    </select><br>
+    Тип транформатора:<br>
+    <input type="radio" name="typeTrans" value="oil">Масляный
+    <input type="radio" name="typeTrans" value="dry">Сухой<br>
+    Входное напряжение:<br>
+    <input type="radio" name="effort" value="6">6
+    <input type="radio" name="effort" value="10">10<br>
+    Материал ошиновки:<br>
+    <input type="radio" name="matTire" value="al">алюминий
+    <input type="radio" name="matTire" value="med">медь<br>
+    <select name="ruvn">
+        <option disabled>Выберите РУВН</option>
+        <option value="rm6">rm6</option>
+        <option value="2">3</option>
+        <option value="3">3</option>
+        <option value="kso-299">КСО-299</option>
+        <option value="kso-399">КСО-399</option>
+    </select><br>
+    ПКУ:<br>
+    <input type="radio" name="" value="true">да
+    <input type="radio" name="matTire" value="false">нет<br>
+    РУНН:<br>
+    <input type="radio" name="runn" value="shrnn">ШРНН
+    <input type="radio" name="runn" value="sho-70v2">ШО-70В2<br>
+    <input type="submit" value="Отправить">
+</form>
+</body>
+</html>

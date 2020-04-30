@@ -1,10 +1,10 @@
 <?php
 include("form.html");
-$textArea = $_REQUEST["textarea"];
-if (!isset($textArea)) {
+if (!isset($_REQUEST["textarea"])) {
     echo "Введите данные";
     return;
 }
+$textArea = $_REQUEST["textarea"];
 $split = explode("\n", $textArea);
 $arrOfWords = [];
 for ($i = 0; $i < count($split); $i++) {

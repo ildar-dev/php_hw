@@ -3,10 +3,11 @@ include("form.html");
 include("AbstractLogger.php");
 include("FileLogger.php");
 include("BrowserLogger.php");
-$format = $_REQUEST["format"];
-if (!isset($format))//проверка параметра времени
+
+if (!isset($_REQUEST["format"]))//проверка параметра времени
     $format = AbstractLogger::WITHOUT;
 else {
+    $format = $_REQUEST["format"];
     switch ($format) {
         case "1":
             $format = AbstractLogger::TIME_DATE;

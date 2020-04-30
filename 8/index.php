@@ -1,13 +1,14 @@
 <?php
 include("form.html");
-$month = $_REQUEST["m"];
 $now = new DateTime();
 $now->setTimezone(new DateTimeZone("Europe/Moscow"));
-if (!isset($month)) {
+if (!isset($_REQUEST["m"])) {
     $month = $now->format("m");
     $date = new DateTime("{$now->format("y-m")}-01 00:00:00", new DateTimeZone("Europe/Moscow"));
-} else
+} else {
+    $month = $_REQUEST["m"];
     $date = new DateTime("{$now->format("y")}-{$month}-01 00:00:00", new DateTimeZone("Europe/Moscow"));
+}
 $calendar = [];
 $step = new DateInterval('P1D');
 $period = new DatePeriod($date, $step, 32);

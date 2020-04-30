@@ -1,11 +1,11 @@
 <?php
 include("form.html");
-$password = $_REQUEST["password"];
-if(!isset($password))
+if(!isset($_REQUEST["password"]))
 {
     echo "Введите пароль";
     return;
 }
+$password = $_REQUEST["password"];
 $warning = "<span style=\"color: red; \">пароль должен :</br> ";
 $isCorrect = true;
 $categories = [];

@@ -1,10 +1,10 @@
 <?php
 include("form.html");
-$textArea = $_REQUEST["area"];
-if (!isset($textArea)) {
+if (!isset($_REQUEST["area"])) {
     echo "Введите данные";
     return;
 }
+$textArea = $_REQUEST["area"];
 $arrayOfLines = explode("\n", $textArea);
 $data = [];
 $sum = 0;
