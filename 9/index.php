@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('error_reporting', E_ALL);
 include("form.html");
 include("AbstractLogger.php");
 include("FileLogger.php");
@@ -20,21 +22,13 @@ else {
             break;
     }
 }
-$textArea = $_REQUEST["text"];
-if (!isset($textArea)) {//проверка текста
+if (!isset($_REQUEST["text"])||!isset($_REQUEST["log"])||!isset($_REQUEST["path"])) {//проверка текста
     echo "Введите строки";
     return;
 }
+$textArea = $_REQUEST["text"];
 $logType = $_REQUEST["log"];
-if (!isset($logType)) {//проверка типа логера
-    echo "Выберите способ вывода логов";
-    return;
-}
 $path = $_REQUEST["path"];
-if ($logType == "file" && !isset($path)) {//проверка пути до файла
-    echo "Укажите файл для вывода логов";
-    return;
-}
 if ($logType == "file")
     $logger = new FileLogger($path);
 else

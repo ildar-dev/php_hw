@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('error_reporting', E_ALL);
 include("form.html");
 $now = new DateTime();
 $now->setTimezone(new DateTimeZone("Europe/Moscow"));
