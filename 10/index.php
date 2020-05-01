@@ -2,8 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
 spl_autoload_register(function ($className) {
-    $className = str_replace("\\", DIRECTORY_SEPARATOR, $className);
-    $path = $_SERVER['DOCUMENT_ROOT'] . "/" . $className . '.php';
+    $path = str_replace("\\", DIRECTORY_SEPARATOR,$_SERVER['DOCUMENT_ROOT']."\\".$className.'.php');
     require $path;
 });
 $rnd = new randomException();
