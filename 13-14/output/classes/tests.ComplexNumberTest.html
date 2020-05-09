@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src').replace( /\\/g, '/');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/app.html">\app</a></li>
+                                                        <li><a href="../namespaces/tests.html">\tests</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-198612498"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-198612498" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1144387124"></a>
+                                <a href="../namespaces/app.html" style="margin-left: 30px; padding-left: 0">app</a>
+            </div>
+            <div id="namespace-1144387124" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.ComplexNumber.html">ComplexNumber</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-134635846"></a>
+                                <a href="../namespaces/tests.html" style="margin-left: 30px; padding-left: 0">tests</a>
+            </div>
+            <div id="namespace-134635846" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/tests.ComplexNumberTest.html">ComplexNumberTest</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/tests.html">\tests</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\tests</small>ComplexNumberTest</h1>
+                    <p><em>Test for Complex number</em></p>
+                    <p>Test for general functions and arguments</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/tests.ComplexNumberTest.html#method_testAdd" class="">testAdd()</a><br />
+                                                                    <a href="../classes/tests.ComplexNumberTest.html#method_testSub" class="">testSub()</a><br />
+                                                                    <a href="../classes/tests.ComplexNumberTest.html#method_testMult" class="">testMult()</a><br />
+                                                                    <a href="../classes/tests.ComplexNumberTest.html#method_testDiv" class="">testDiv()</a><br />
+                                                                    <a href="../classes/tests.ComplexNumberTest.html#method_testAbs" class="">testAbs()</a><br />
+                                                                    <a href="../classes/tests.ComplexNumberTest.html#method_testAbsWithZeroPart" class="">testAbsWithZeroPart()</a><br />
+                                                                    <a href="../classes/tests.ComplexNumberTest.html#method_testExceptionDivisionByZero" class="">testExceptionDivisionByZero()</a><br />
+                                                                    <a href="../classes/tests.ComplexNumberTest.html#method_testNan" class="">testNan()</a><br />
+                                                                    <a href="../classes/tests.ComplexNumberTest.html#method_testToString" class="">testToString()</a><br />
+                                                                    <a href="../classes/tests.ComplexNumberTest.html#method_dataSetWithoutExpected" class="">dataSetWithoutExpected()</a><br />
+                                                                    <a href="../classes/tests.ComplexNumberTest.html#method_dataWithExpectedMult" class="">dataWithExpectedMult()</a><br />
+                                                                    <a href="../classes/tests.ComplexNumberTest.html#method_dataWithExpectedDiv" class="">dataWithExpectedDiv()</a><br />
+                                                                    <a href="../classes/tests.ComplexNumberTest.html#method_dataWithExpectedAbs" class="">dataWithExpectedAbs()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/tests.ComplexNumberTest.html"><div class="path-wrapper">tests/ComplexNumberTest.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Ildar_Davletyarov_Home_Work</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                
+                                        <div class="namespace-wrapper">\PHPUnit\Framework\TestCase</div>
+                                                                                                    <div class="namespace-wrapper">\tests\ComplexNumberTest</div>
+                            </dd>
+
+                        
+                        
+                        
+                                                                            <dt>See also</dt>
+                                                                                        <dd><a href="vk.com/plosko"><span class="namespace-wrapper">vk.com/plosko</span></a></dd>
+                                                                            
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                category
+                            </th>
+                            <td>
+                                                                                                        <p>Ildar_Davletyarov_Home_Work</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                                                        <p>Ildar Davletyarov <a href="mailto:ildardaf@gmail.com">ildardaf@gmail.com</a></p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                license
+                            </th>
+                            <td>
+                                                                                                        <p>without licence</p>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                        
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_testAdd" name="method_testAdd" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">testAdd()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">testAdd(float  <span class="argument">$a1</span>, float  <span class="argument">$b1</span>, float  <span class="argument">$a2</span>, float  <span class="argument">$b2</span>) : void</pre>
+                <p><em>Test for difference</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>float</td>
+                                <td>$a1 </td>
+                                <td><p>real part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$b1 </td>
+                                <td><p>imaginary part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$a2 </td>
+                                <td><p>real part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$b2 </td>
+                                <td><p>imaginary part of complex number</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tests.ComplexNumberTest.html"><div class="path-wrapper">\tests\ComplexNumberTest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            dataProvider
+                        </th>
+                        <td>
+                                                                                            <p>dataSetWithoutExpected</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_testSub" name="method_testSub" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">testSub()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">testSub(float  <span class="argument">$a1</span>, float  <span class="argument">$b1</span>, float  <span class="argument">$a2</span>, float  <span class="argument">$b2</span>) : void</pre>
+                <p><em>Test for difference</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>float</td>
+                                <td>$a1 </td>
+                                <td><p>real part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$b1 </td>
+                                <td><p>imaginary part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$a2 </td>
+                                <td><p>real part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$b2 </td>
+                                <td><p>imaginary part of complex number</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tests.ComplexNumberTest.html"><div class="path-wrapper">\tests\ComplexNumberTest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            dataProvider
+                        </th>
+                        <td>
+                                                                                            <p>dataSetWithoutExpected</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_testMult" name="method_testMult" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">testMult()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">testMult(float  <span class="argument">$a1</span>, float  <span class="argument">$b1</span>, float  <span class="argument">$a2</span>, float  <span class="argument">$b2</span>, float  <span class="argument">$expectedA</span>, float  <span class="argument">$expectedB</span>) : void</pre>
+                <p><em>Test for multiply</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>float</td>
+                                <td>$a1 </td>
+                                <td><p>real part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$b1 </td>
+                                <td><p>imaginary part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$a2 </td>
+                                <td><p>real part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$b2 </td>
+                                <td><p>imaginary part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$expectedA </td>
+                                <td><p>expected real part</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$expectedB </td>
+                                <td><p>expected imaginary part</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tests.ComplexNumberTest.html"><div class="path-wrapper">\tests\ComplexNumberTest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            dataProvider
+                        </th>
+                        <td>
+                                                                                            <p>dataWithExpectedMult</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_testDiv" name="method_testDiv" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">testDiv()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">testDiv(float  <span class="argument">$a1</span>, float  <span class="argument">$b1</span>, float  <span class="argument">$a2</span>, float  <span class="argument">$b2</span>, float  <span class="argument">$expectedA</span>, float  <span class="argument">$expectedB</span>) : void</pre>
+                <p><em>Test for divide numbers</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>float</td>
+                                <td>$a1 </td>
+                                <td><p>real part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$b1 </td>
+                                <td><p>imaginary part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$a2 </td>
+                                <td><p>real part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$b2 </td>
+                                <td><p>imaginary part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$expectedA </td>
+                                <td><p>expected real part</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$expectedB </td>
+                                <td><p>expected imaginary part</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tests.ComplexNumberTest.html"><div class="path-wrapper">\tests\ComplexNumberTest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            dataProvider
+                        </th>
+                        <td>
+                                                                                            <p>dataWithExpectedDiv</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_testAbs" name="method_testAbs" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">testAbs()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">testAbs(float  <span class="argument">$a1</span>, float  <span class="argument">$b1</span>, float  <span class="argument">$expected</span>) : void</pre>
+                <p><em>Test for absolute value</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>float</td>
+                                <td>$a1 </td>
+                                <td><p>real part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$b1 </td>
+                                <td><p>imaginary part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$expected </td>
+                                <td><p>expected value</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tests.ComplexNumberTest.html"><div class="path-wrapper">\tests\ComplexNumberTest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            dataProvider
+                        </th>
+                        <td>
+                                                                                            <p>dataWithExpectedAbs</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_testAbsWithZeroPart" name="method_testAbsWithZeroPart" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">testAbsWithZeroPart()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">testAbsWithZeroPart() : void</pre>
+                <p><em>Test for absolute number</em></p>
+                
+
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tests.ComplexNumberTest.html"><div class="path-wrapper">\tests\ComplexNumberTest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_testExceptionDivisionByZero" name="method_testExceptionDivisionByZero" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">testExceptionDivisionByZero()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">testExceptionDivisionByZero() : void</pre>
+                <p><em>Test for division by zero</em></p>
+                
+
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tests.ComplexNumberTest.html"><div class="path-wrapper">\tests\ComplexNumberTest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            expectedException
+                        </th>
+                        <td>
+                                                                                            <p>\InvalidArgumentException
+не проходит тест, хотя сам ожидает данное исключение</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_testNan" name="method_testNan" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">testNan()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">testNan() : void</pre>
+                <p><em>Test for NAN arguments</em></p>
+                
+
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tests.ComplexNumberTest.html"><div class="path-wrapper">\tests\ComplexNumberTest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_testToString" name="method_testToString" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">testToString()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">testToString(float  <span class="argument">$a1</span>, float  <span class="argument">$b1</span>) : void</pre>
+                <p><em>Test for override __toString</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>float</td>
+                                <td>$a1 </td>
+                                <td><p>real part of complex number</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$b1 </td>
+                                <td><p>imaginary part of complex number</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tests.ComplexNumberTest.html"><div class="path-wrapper">\tests\ComplexNumberTest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            dataProvider
+                        </th>
+                        <td>
+                                                                                            <p>dataSetWithoutExpected</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_dataSetWithoutExpected" name="method_dataSetWithoutExpected" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">dataSetWithoutExpected()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">dataSetWithoutExpected() : array</pre>
+                <p><em>Data provider for testAdd, testSub</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tests.ComplexNumberTest.html"><div class="path-wrapper">\tests\ComplexNumberTest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_dataWithExpectedMult" name="method_dataWithExpectedMult" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">dataWithExpectedMult()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">dataWithExpectedMult() : array</pre>
+                <p><em>Data provider for testMult</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tests.ComplexNumberTest.html"><div class="path-wrapper">\tests\ComplexNumberTest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_dataWithExpectedDiv" name="method_dataWithExpectedDiv" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">dataWithExpectedDiv()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">dataWithExpectedDiv() : array</pre>
+                <p><em>Data provider for testDiv</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tests.ComplexNumberTest.html"><div class="path-wrapper">\tests\ComplexNumberTest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_dataWithExpectedAbs" name="method_dataWithExpectedAbs" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">dataWithExpectedAbs()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">dataWithExpectedAbs() : array</pre>
+                <p><em>Data provider for testAbs</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tests.ComplexNumberTest.html"><div class="path-wrapper">\tests\ComplexNumberTest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">ComplexNumberTest.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/tests/ComplexNumberTest.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/app.html">\app</a></li>
+                                                                            <li><a href="../namespaces/tests.html">\tests</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on May 9th, 2020 at 16:15.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
