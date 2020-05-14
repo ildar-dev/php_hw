@@ -29,26 +29,27 @@ function generator($resultArray)
 {
     $sum = $resultArray["sum"];
     $data = $resultArray["data"];
-    $rnd = mt_rand(0, $sum - 1);
-    for ($i = 0; $i < count($data); $i++) {
-        $rnd -= $data[$i]["weight"];
-        if ($rnd < 0) {
-            return $data[$i]["text"];
-            break;
+    for($j=0;$j<10000;$j++) {
+        $rnd = mt_rand(0, $sum - 1);
+        for ($i = 0; $i < count($data); $i++) {
+            $rnd -= $data[$i]["weight"];
+            if ($rnd < 0) {
+               yield  $data[$i]["text"];
+                break;
+            }
         }
     }
-    return false;
 }
 
 function checkGenerator($resultArray)
 {
     $lineToCount = [];
     $checkedArray = [];
-    for ($i = 0; $i < 10000; $i++) {
-        $str = generator($resultArray);
-        if (!isset($lineToCount[$str]))
-            $lineToCount[$str] = 0;
-        $lineToCount[$str]++;
+        $generator = generator($resultArray);
+        foreach ($generator as $line) {
+            if (!isset($lineToCount[$line]))
+                $lineToCount[$line] = 0;
+            $lineToCount[$line]++;
     }
     foreach ($lineToCount as $line => $count) {
         $obj = [];
